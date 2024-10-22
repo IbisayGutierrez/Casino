@@ -6,6 +6,7 @@ package Rodillo;
 
 import java.util.Random;
 import javax.swing.ImageIcon;
+import javax.swing.JLabel;
 
 /**
  *
@@ -25,6 +26,22 @@ import javax.swing.ImageIcon;
         this.random = new Random();
     }
 
+     public rodillo(JLabel label) {
+        // Asignamos el JLabel que se actualizará con las imágenes
+        this.label = label;
+
+        // Aquí colocamos los nombres de las imágenes que representan los símbolos del tragamonedas
+        this.imagenes = new String[] {
+            "cereza.png",
+            "limon.png",
+            "campana.png",
+            "sandia.png"
+        };
+
+        this.girando = true;  // Inicialmente el rodillo está girando
+        this.random = new Random();  // Objeto para generar números aleatorios
+    }
+     
     @Override
     public void run() {
         while (girando) {
